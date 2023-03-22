@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
+
+<body>
+    
+    <%- include('includes/header') %>
+
+    <main>                                    
+        <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">  
+    </main>
+
+    <h3>NOVIDADES</h3>
+
+    <div class="container">
+
+        <% productNovidades.forEach(item => { console.log(item)%>
+            <div class="produto">
+                <img src="<%= item.imagem %>" alt="produto">
+                <p> <%= item.nome %> </p>
+                <p><%= item.valor %> </p>
+                <div >
+                    <button>
+                    Comprar    
+                    </button>
+                </div>
+            </div>
+
+       <%})%>
+
+    </div>
+   
+       <%- include('includes/footer') %>
+
+</body>
+</html>
