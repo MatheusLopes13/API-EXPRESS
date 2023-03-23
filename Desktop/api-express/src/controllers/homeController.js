@@ -4,8 +4,11 @@ const productNovidades = require('../database/productNovidades.json')
 
 const homeController = {
 home: (req, res) => {
-    res.render('home' , {productsHome ,productNovidades } )
-}
+    res.render('home' , {productNovidades } )
+}, 
+
+
+
 
 }
 
