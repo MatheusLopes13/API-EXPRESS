@@ -3,7 +3,10 @@ const loginController = {
 // aqui é o meu atributo função    
     loginPage: (req, res) => {
         res.render('login',)
-        
+    },
+
+    logarUsuario: (req, res) => {
+     
     }
 } 
 // aqui eu to exportando o meu objeto
