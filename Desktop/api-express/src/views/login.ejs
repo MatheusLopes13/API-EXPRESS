@@ -14,27 +14,31 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
 
         <!-- Login -->
         <div class="width-30">
-            <p class="login">Faça login</p>
+            <form action="/logar" method="post">
+                <p class="login">Faça login</p>
     
-            <div class="inputs">  
-                 <label>E-mail</label>  
-                 <input type="email" id="email">
-                 <p class="mensagem" id="email-aviso">Campo e-mail obrigatório</p>   
-             </div>
-         
-             <div class="inputs">  
-                 <label>Senha</label>
-                 <input type="password" id="senha" minlength="8" required>
-                 <p class="mensagem" id="senha-aviso">Campo senha obrigatório</p>    
-             </div>
+                <div class="inputs">  
+                     <label  for="email">E-mail</label>  
+                     <input type="email" name="email" required minlength="8">
+                     <p class="mensagem" id="email-aviso">Campo e-mail obrigatório</p>   
+                 </div>
+             
+                 <div class="inputs">  
+                     <label for="senha">Senha</label>
+                     <input type="password" name="senha" minlength="8" required>
+                     <p class="mensagem" id="senha-aviso">Campo senha obrigatório</p>    
+                 </div>
+    
+                 <div class="inputs">
+                    <button type="submit" class="buttom-black">Entrar</button>
+                    <a href="../recuperar-senha/recuperar-senha.html">Esqueceu sua senha?</a>
+                    <button class="buttom-facebook">
+                        <img src="../publico/imagens/facebook.png" alt="" class="fb-image">
+                        Entrar com Facebook
+                    </button>
 
-             <div class="inputs">
-                <button onclick="entrar()" class="buttom-black">Entrar</button>
-                <a href="../recuperar-senha/recuperar-senha.html">Esqueceu sua senha?</a>
-                <button class="buttom-facebook">
-                    <img src="../publico/imagens/facebook.png" alt="" class="fb-image">
-                    Entrar com Facebook
-                </button>
+            </form>
+           
 
              </div>
         </div>
