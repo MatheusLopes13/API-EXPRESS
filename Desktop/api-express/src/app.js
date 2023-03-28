@@ -3,6 +3,8 @@ const path = require("path")
 const express = require('express')
 const app = express()
 app.use(express.json())
+// aqui na linha 7 captura na forma de objeto literal tudo o que vem de um formulário
+app.use(express.urlencoded({ extended: false }))
 
 // instanciando como view engine
 app.set("view engine", "ejs")
