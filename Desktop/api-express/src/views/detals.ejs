@@ -52,9 +52,7 @@
 
                 </div>
 
-                <div id="container">
-
-                </div>
+              
 
                 <div class="adicionar-comprar">
                     <div class="adicionar-item">
@@ -105,14 +103,14 @@
 
                                 adicionarQuantidade.addEventListener('click', () => action("+"))
 
-                                subtrairQuantidade.addEventListener('click', () => action("-"))
+                                subtrairQuantidade.addEventListener('click', () => action())
 
                             }
 
                         </script>
 
                         <p id="quantidade">1</p>
-                        <button id="botao-menos">-</button>
+                        <button id="botao-menos" disabled="true">-</button>
 
                     </div>
 
