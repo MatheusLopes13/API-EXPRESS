@@ -18,7 +18,7 @@ router.get('/pagamento', pagamentoController.pagamentoPage)
 
 router.post('/logar', loginController.logarUsuario)
 
-router.get('/detals', detalsController.getProduct)
+router.get('/detals/:id', detalsController.getProduct)
 
 
 

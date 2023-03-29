@@ -1,13 +1,11 @@
 
-const productNovidades = require('../database/productNovidades.json')
+const allProducts = require('../database/allProduct.json')
 
 
 const homeController = {
 home: (req, res) => {
-    res.render('home' , {productNovidades } )
+    res.render('home' , {allProducts } )
 }, 
-
-
 
 
 }

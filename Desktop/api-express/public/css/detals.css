@@ -47,6 +47,7 @@ margin-left: 5rem;
     gap: 7px;
     margin-top: 10px;
 }
+
 .tamanhos button {
     width: 2rem;
     height: 2rem;
@@ -95,4 +96,13 @@ align-items: center;
 .cursor-sizes {
     cursor: pointer;
     background-color: #999898;
+}
+.imagens-produto {
+    display: flex;
+    flex-direction: column;
+}
+
+.tamanhos-produto {
+    display: flex;
+    gap: 8px;
 }

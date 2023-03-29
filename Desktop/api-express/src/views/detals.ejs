@@ -3,55 +3,125 @@
 
 <%- include('includes/head', { linkCss: 'css/detals.css' , title: 'Home page' }) %>
 
-<!-- <%- include('includes/header') %> -->
+    <%- include('includes/header') %>
 
-<main>
-    <div class="box-1">
-        <img id="img-one" src="../publico/Tênis/New Balance/new-balance-530(branco).png" alt="sd">
-        <img id="img-two" src="../publico/Tênis/New Balance/tiago-lemos-1010(bege).png" alt="">
-        <img id="img-tre" src="../publico/Tênis/New Balance/new-balance-tenis-numeric-sport-288(branco).png" alt="">
-    </div>
+        <main>
 
-    <div class="box-2">
-        <button>
-            <i class="fa-solid fa-arrow-left"></i>
-        </button>
-        <img id="imagem-produto">
-        <button>
-            <i class="fa-solid fa-arrow-right"></i>
-        </button>
-    </div>
-
-    <div class="box-3">
-        <h1 id="nome-produto"> </h1>
-        <h3 id="cor-produto"></h3>
-        <p id="valor-produto" class="preco"><strong>R$ 000,00</strong> </p>
-        <p id="valor-parcelado">ou em até 3x de R$ 89,67</p>
-
-        <ul>
-            <li>material usado</li>
-            <li>tipo simples</li>
-            <li>feito no brasil</li>
-        </ul>
-
-        <p class="tamanho">TAMANHOS</p>
-
-        <div id="container">
-
-        </div>
-
-        <div class="adicionar-comprar">
-            <div class="adicionar-item">
-                <button>+</button>
-                <p id="quantidade">1</p>
-                <button id="botao-menos" >-</button>
+            <div class="box-1">
+                <% product.imagem.forEach((item, index)=> { %>
+                    <img id="img-<%= index %>" src="<%= item %>" alt="sd">
+                    <% }) %>
             </div>
 
-            <div class="button-comprar">
-                <button>comprar</button>
-            </div>
-        </div>
-    </div>
 
-</main>
+            <div class="box-2">
+
+
+                <img id="imagem-produto" src="<%= product.imagem[0] %>">
+
+
+            </div>
+
+            <div class="box-3">
+                <h1 id="nome-produto">
+                    <%= product.nome %>
+                </h1>
+                <h3 id="cor-produto">
+                    <%= product.cor %>
+                </h3>
+                <p id="valor-produto" class="preco"><strong> R$ <%= product.valor %></strong> </p>
+                <p id="valor-parcelado">ou em até 3x de R$ <%= product.valor/ 3 %>
+                </p>
+
+                <ul>
+                    <li>material usado</li>
+                    <li>tipo simples</li>
+                    <li>feito no brasil</li>
+                </ul>
+
+                <div class="tamanhos-produto">
+                    <% product.tamanhos.forEach((item)=> { %>
+
+                        <button class="tamanho">
+                            <%= item %>
+                        </button>
+
+                        <% }) %>
+
+                        
+
+                </div>
+
+                <div id="container">
+
+                </div>
+
+                <div class="adicionar-comprar">
+                    <div class="adicionar-item">
+                        <button id="botao-mais">+</button>
+
+
+                        <script>
+                            window.onload = () => {
+
+                                let quantidade = document.getElementById("quantidade");
+                                var estoque = 1
+
+                                function action(operation) {
+                                    if (operation === "+") {
+                                        estoque++
+                                        quantidade.innerHTML = estoque
+                                        if (estoque > 1) {
+                                            subtrairQuantidade.disabled = false;
+                                        }
+                                    }
+                                    else {
+                                        estoque--
+                                        quantidade.innerHTML = estoque
+                                        if (estoque == 1) {
+                                            document.getElementById("botao-menos").disabled = true;
+                                        }
+
+                                    }
+                                }
+
+                                let imagem1 = document.getElementById('img-0');
+                                let imagem2 = document.getElementById('img-1');
+                                let imagem3 = document.getElementById('img-2');
+                                let imagemPrincipal = document.getElementById('imagem-produto');
+
+                                const imgArray = [imagem1, imagem2, imagem3]
+
+                                imgArray.forEach((img) => {
+                                    img.addEventListener('click', () => {
+                                        imagemPrincipal.src = img.src
+                                    })
+
+                                })
+
+                                let adicionarQuantidade = document.getElementById('botao-mais');
+                                let subtrairQuantidade = document.getElementById('botao-menos')
+
+
+                                adicionarQuantidade.addEventListener('click', () => action("+"))
+
+                                subtrairQuantidade.addEventListener('click', () => action("-"))
+
+                            }
+
+                        </script>
+
+                        <p id="quantidade">1</p>
+                        <button id="botao-menos">-</button>
+
+                    </div>
+
+                    <div class="button-comprar">
+                        <button>comprar</button>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+
 </html>

@@ -15,19 +15,15 @@
 
     <div class="container">
 
-        <% productNovidades.forEach(item => { %>
+        <% allProducts.forEach(item => { %>
             <div class="produto">
-                <img src="<%= item.imagem %>" alt="produto">
+                <img src="<%= item.imagem[0] %>" alt="produto">
                 <p> <%= item.nome %> </p>
                 <p><%= item.valor %> </p>
                 <div >
 
-                    <a href="/detals">
-
-                       
-                        Comprar    
-                       
-
+                    <a href="/detals/<%= item.id %>">
+                        <button> Comprar </button>   
                     </a>
                 </div>
             </div>
