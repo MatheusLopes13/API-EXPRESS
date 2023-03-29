@@ -1,4 +1,4 @@
-const productsHome = require('../database/productHome')
+
 const productNovidades = require('../database/productNovidades.json')
 
 

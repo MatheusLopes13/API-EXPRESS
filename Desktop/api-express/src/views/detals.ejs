@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('includes/head', { linkCss: 'css/detals.css' , title: 'Home page' }) %>
+
+<!-- <%- include('includes/header') %> -->
+
+<main>
+    <div class="box-1">
+        <img id="img-one" src="../publico/Tênis/New Balance/new-balance-530(branco).png" alt="sd">
+        <img id="img-two" src="../publico/Tênis/New Balance/tiago-lemos-1010(bege).png" alt="">
+        <img id="img-tre" src="../publico/Tênis/New Balance/new-balance-tenis-numeric-sport-288(branco).png" alt="">
+    </div>
+
+    <div class="box-2">
+        <button>
+            <i class="fa-solid fa-arrow-left"></i>
+        </button>
+        <img id="imagem-produto">
+        <button>
+            <i class="fa-solid fa-arrow-right"></i>
+        </button>
+    </div>
+
+    <div class="box-3">
+        <h1 id="nome-produto"> </h1>
+        <h3 id="cor-produto"></h3>
+        <p id="valor-produto" class="preco"><strong>R$ 000,00</strong> </p>
+        <p id="valor-parcelado">ou em até 3x de R$ 89,67</p>
+
+        <ul>
+            <li>material usado</li>
+            <li>tipo simples</li>
+            <li>feito no brasil</li>
+        </ul>
+
+        <p class="tamanho">TAMANHOS</p>
+
+        <div id="container">
+
+        </div>
+
+        <div class="adicionar-comprar">
+            <div class="adicionar-item">
+                <button>+</button>
+                <p id="quantidade">1</p>
+                <button id="botao-menos" >-</button>
+            </div>
+
+            <div class="button-comprar">
+                <button>comprar</button>
+            </div>
+        </div>
+    </div>
+
+</main>
+</html>

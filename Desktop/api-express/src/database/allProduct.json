@@ -1,0 +1,71 @@
+[
+    {
+        "id": 1,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Tiago lemos",
+        "valor": 600,
+        "cor": "preto",
+        "tamanhos": [38,39,40,42]
+    },
+    {
+        "id": 2,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Calça Chino",
+        "valor": 450,
+        "cor": "verde",
+        "tamanhos": [38,40,42]
+      
+    },
+    {
+        "id": 3,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Polar shirt",
+        "valor": 300,
+        "cor": "marrom",
+        "tamanhos": ["p", "m,gg"]
+    },
+    {
+        "id": 4,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Polar shirt",
+        "valor": 150,
+        "cor": "azul",
+        "tamanhos": ["m","gg"]
+    },
+    {
+        "id": 5,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Tiago lemos",
+        "valor": 600,
+        "cor": "preto",
+        "tamanhos": [38,39,40,42]
+    },
+    {
+        "id": 6,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Calça Chino",
+        "valor": 450,
+        "cor": "verde",
+        "tamanhos": [38,40,42]
+      
+    },
+    {
+        "id": 7,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Polar shirt",
+        "valor": 300,
+        "cor": "marrom",
+        "tamanhos": ["p", "m,gg"]
+    },
+    {
+        "id": 8,
+        "imagem": "images/tennis/tiago-beje.png",
+        "nome": "Polar shirt",
+        "valor": 150,
+        "cor": "azul",
+        "tamanhos": ["m","gg"]
+    }
+
+
+
+]
