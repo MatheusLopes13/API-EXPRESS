@@ -7,7 +7,7 @@ const detalsController = {
          let product = allProducts.find((item) => {
             return item.id == id
          })
-         console.log(product)
+         
         res.render('detals' , {product})
     }
     

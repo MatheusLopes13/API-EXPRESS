@@ -2,14 +2,14 @@
 
     <div class="dropdown">
         <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-          Menu
+            Menu
         </button>
         <ul class="dropdown-menu">
-          <li><a class="dropdown-item" href="">Tênis</li>
-          <li><a class="dropdown-item" href="">Roupas</li>
-          <li><a class="dropdown-item" href="">Skate</a></li>
+            <li><a class="dropdown-item" href="">Tênis</li>
+            <li><a class="dropdown-item" href="">Roupas</li>
+            <li><a class="dropdown-item" href="">Skate</a></li>
         </ul>
-      </div>
+    </div>
 
 
     <div class="menu-1">
@@ -23,15 +23,15 @@
             <li>
                 <a href="">Skate</a>
             </li>
-        </ul>  
+        </ul>
     </div>
-    
-    
+
+
     <a href="/">
-        <img class="aviao-img menu-2" src="images/Jet skateshop 2.png" alt="imagem  aviao">
+        <img class="aviao-img menu-2" src="/images/Jet skateshop 2.png" alt="imagem  aviao">
     </a>
 
-    
+
     <div class="menu-3">
 
         <div class="pesquisar">
@@ -39,8 +39,9 @@
             <input class="input-pesquisar">
         </div>
 
-        <a href="/pagamento">
-            <i class="fa-solid fa-cart-shopping destaque"></i>        
+
+        <a data-bs-toggle="modal" data-bs-target="#exampleModal">
+            <i class="fa-solid fa-cart-shopping destaque"></i>
         </a>
 
         <a href="/login">
@@ -48,10 +49,118 @@
             <i class="fa-solid fa-user destaque"></i>
 
         </a>
-        
-        
-        
-    </div>
 
+
+
+    </div>
+   
 
 </header>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content">
+            <!--<div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> 
+      </div> -->
+
+
+
+
+
+
+            <div class="modal-header">
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+
+
+            <main>
+                <div class="titulo">
+                    <p class="meu-carrinho">MEU CARRINHO</p>
+                    <div class="box">
+
+                        <p>
+                            produto
+                        </p>
+
+                        <p>
+                            subtotal
+                        </p>
+                    </div>
+                </div>
+
+
+
+                <div id="container" class="container">
+
+                 
+
+                   
+                        <div class="produto-carrinho">
+                            <div class="display-flex">
+                                <img src="" alt="">
+                                <div>
+                                    <p> </p>
+
+                                    <p>corproduto</p>
+
+                                    <p>quantidadeproduto</p>
+                                </div>
+
+                            </div>
+
+                            <div class="display-flex">
+                                <p>R$ 000,00</p>
+                                <p>X</p>
+                            </div>
+                        </div>
+
+                 
+                </div>
+
+
+
+                <div class="subtotal">
+                    <p>SUBTOTAL</p>
+                    <p>R$ 000,00</p>
+                </div>
+
+                <div class="frete">
+                    <p>FRETE:</p>
+                    <p>R$ 000,00</p>
+                </div>
+
+                <div class="total">
+                    <p>TOTAL:</p>
+                    <p id="valor-total">R$ 000,00</p>
+                </div>
+
+                <div class="total">
+                    <a href="../home.ejs">Ver mais produtos</a>
+
+                    <a href="../pagamento.ejs">
+                        <button class="button-finalizar">
+                            Finalizar compra
+                        </button>
+                    </a>
+                </div>
+
+            </main>
+
+
+
+
+
+        </div>
+    </div>
+</div>

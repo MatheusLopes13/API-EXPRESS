@@ -11,6 +11,11 @@ const pagamentoController = require('../controllers/pagamentoController')
 
 
 router.get('/', homeController.home)
+
+router.get('/detals/:id', detalsController.getProduct)
+
+
+router.get('/carrinho', )
 // aqui eu criei a rota /Login e quando ele acessa a rota ele chama a minha callback
 router.get('/login', loginController.loginPage) 
 // aqui eu criei a rota /Pagamento e quando ele acessa a rota ele chama a minha callback
@@ -18,7 +23,6 @@ router.get('/pagamento', pagamentoController.pagamentoPage)
 
 router.post('/logar', loginController.logarUsuario)
 
-router.get('/detals/:id', detalsController.getProduct)
 
 
 

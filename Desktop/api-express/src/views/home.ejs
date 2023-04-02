@@ -3,36 +3,59 @@
 
 <%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
 
-<body>
-    
-    <%- include('includes/header') %>
+    <body>
+        
+        <script>
+ 
+            const produto = [
+                {
+                    id: 004,
+                    imagem: "../publico/Tênis/nike/dunk-marrom.png",
+                    nome: "nike Dunk",
+                    valor: 150,
+                    cor: "azul",
+                    tamanhos: ["m", "gg"]
+                }
+            ]
 
-    <main>                                    
-        <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">  
-    </main>
+            
 
-    <h3>NOVIDADES</h3>
+            console.log(produto)
+        </script>
 
-    <div class="container">
+        <%- include('includes/header') %>
 
-        <% allProducts.forEach(item => { %>
-            <div class="produto">
-                <img src="<%= item.imagem[0] %>" alt="produto">
-                <p> <%= item.nome %> </p>
-                <p><%= item.valor %> </p>
-                <div >
+            <main>
+                <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">
+            </main>
 
-                    <a href="/detals/<%= item.id %>">
-                        <button> Comprar </button>   
-                    </a>
-                </div>
+            <h3>NOVIDADES</h3>
+
+            <div class="container">
+
+                <% allProducts.forEach(item=> { %>
+                    <div class="produto">
+                        <img src="<%= item.imagem[0] %>" alt="produto">
+                        <p>
+                            <%= item.nome %>
+                        </p>
+                        <p>
+                            <%= item.valor %>
+                        </p>
+                        <div>
+
+                            <a href="/detals/<%= item.id %>">
+                                <button> Comprar </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <%})%>
+
             </div>
 
-       <%})%>
+            <%- include('includes/footer') %>
 
-    </div>
-   
-       <%- include('includes/footer') %>
+    </body>
 
-</body>
 </html>

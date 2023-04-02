@@ -30,7 +30,7 @@
                     <%= product.cor %>
                 </h3>
                 <p id="valor-produto" class="preco"><strong> R$ <%= product.valor %></strong> </p>
-                <p id="valor-parcelado">ou em até 3x de R$ <%= product.valor/ 3 %>
+                <p id="valor-parcelado">ou em 3x de R$ <%= product.valor/ 3 %>
                 </p>
 
                 <ul>
@@ -42,7 +42,7 @@
                 <div class="tamanhos-produto">
                     <% product.tamanhos.forEach((item)=> { %>
 
-                        <button class="tamanho">
+                        <button class="button-quantidade">
                             <%= item %>
                         </button>
 
@@ -83,6 +83,14 @@
                                     }
                                 }
 
+                                let adicionarQuantidade = document.getElementById('botao-mais');
+                                let subtrairQuantidade = document.getElementById('botao-menos')
+
+
+                                adicionarQuantidade.addEventListener('click', () => action("+"))
+                                subtrairQuantidade.addEventListener('click', () => action())
+
+
                                 let imagem1 = document.getElementById('img-0');
                                 let imagem2 = document.getElementById('img-1');
                                 let imagem3 = document.getElementById('img-2');
@@ -97,13 +105,7 @@
 
                                 })
 
-                                let adicionarQuantidade = document.getElementById('botao-mais');
-                                let subtrairQuantidade = document.getElementById('botao-menos')
-
-
-                                adicionarQuantidade.addEventListener('click', () => action("+"))
-
-                                subtrairQuantidade.addEventListener('click', () => action())
+                               
 
                             }
 
@@ -121,5 +123,5 @@
             </div>
 
         </main>
-
+        <%- include('includes/footer') %>
 </html>
