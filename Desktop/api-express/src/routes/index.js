@@ -10,9 +10,10 @@ const loginController = require('../controllers/loginController')
 const pagamentoController = require('../controllers/pagamentoController')
 
 
-router.get('/', homeController.home)
+router.get('/',  homeController.home)
 
 router.get('/detals/:id', detalsController.getProduct)
+router.get('/search', homeController.search)
 
 
 router.get('/carrinho', )

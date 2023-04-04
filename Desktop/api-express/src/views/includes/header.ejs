@@ -35,8 +35,14 @@
     <div class="menu-3">
 
         <div class="pesquisar">
-            <i class="fa-solid fa-magnifying-glass destaque"></i>
-            <input class="input-pesquisar">
+            <form action="../search" method="GET">
+                <button type="submit">
+                    
+                    <i class="fa-solid fa-magnifying-glass destaque"></i>
+
+                </button><input type="text" name="keywords" class="input-pesquisar">
+
+            </form>
         </div>
 
 
@@ -105,14 +111,16 @@
 
                  
 
-                   
+                   <% carrinhoProdutos.forEach((item) => {%>
+
+                  
                         <div class="produto-carrinho">
                             <div class="display-flex">
-                                <img src="" alt="">
+                                <img src=" <%= item.imagem[0] %> " alt="">
                                 <div>
-                                    <p> </p>
+                                    <p> <%= item.nome %> </p>
 
-                                    <p>corproduto</p>
+                                    <p> <%= item.cor %> </p>
 
                                     <p>quantidadeproduto</p>
                                 </div>
@@ -120,12 +128,12 @@
                             </div>
 
                             <div class="display-flex">
-                                <p>R$ 000,00</p>
+                                <p>R$ <%= item.valor %> </p>
                                 <p>X</p>
                             </div>
                         </div>
 
-                 
+                    <% }) %>
                 </div>
 
 

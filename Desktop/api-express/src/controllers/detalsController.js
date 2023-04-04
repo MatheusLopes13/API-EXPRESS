@@ -1,4 +1,5 @@
 const allProducts = require('../database/allProduct')
+const carrinhoProdutos = require('../database/carrinhoProdutos.json')
 
 
 const detalsController = {
@@ -8,9 +9,11 @@ const detalsController = {
             return item.id == id
          })
          
-        res.render('detals' , {product})
-    }
-    
+        res.render('detals' , {product: product,  carrinhoProdutos: carrinhoProdutos})
+    }, 
+
+  
+
     
     }
     
