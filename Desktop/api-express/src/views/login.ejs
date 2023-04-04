@@ -45,47 +45,50 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
        
         <!-- Criar conta -->
         <div class="width-30">
-            <p class="login">Criar conta</p>
-            <div class="input-line">
-                <div class="inputs">
-                    <label>Nome</label>
-                    <input type="text" id="nome">
-                    <p class="mensagem" id="nome-aviso">Campo nome obrigatório</p>
-                </div>
-        
-                <div class="inputs">
-                    <label>Sobrenome</label>
-                    <input type="text" id="sobrenome">
-                    <p class="mensagem" id="sobrenome-aviso">Campo sobrenome obrigatório</p>
-                </div>
+            <form action="/criarconta" method="post">
+                <p class="login">Criar conta</p>
 
-            </div>
+                <div class="input-line">
+                    <div class="inputs">
+                        <label for="nome">Nome</label>
+                        <input type="text" name="nome">
+                        <p class="mensagem" id="nome-aviso">Campo nome obrigatório</p>
+                    </div>
             
-    
-            <div class="inputs">  
-                <label>E-mail</label>  
-                <input type="email" id="logar">
-                <p class="mensagem" id="logar-aviso">Campo email obrigatório</p>
-            </div>
-    
-            <div class="input-line">
-                <div class="inputs">  
-                    <label>Senha</label>
-                    <input type="password" id="entrar" minlength="8" required> 
-                    <p class="mensagem" id="entrar-aviso">Campo senha obrigatório</p>
+                    <div class="inputs">
+                        <label for="sobrenome">Sobrenome</label>
+                        <input type="text" name="sobrenome">
+                        <p class="mensagem" id="sobrenome-aviso">Campo sobrenome obrigatório</p>
+                    </div>
 
                 </div>
+                
         
                 <div class="inputs">  
-                    <label>Confirmar senha</label>
-                    <input type="password" id="confirma" minlength="8" required> 
-                    <p class="mensagem" id="confirma-aviso">Campo confirmar senha obrigatório</p>   
+                    <label for="email">E-mail</label>  
+                    <input type="email" name="email">
+                    <p class="mensagem" id="logar-aviso">Campo email obrigatório</p>
                 </div>
+        
+                <div class="input-line">
+                    <div class="inputs">  
+                        <label for="senha">Senha</label>
+                        <input type="password" name="senha" minlength="8" required> 
+                        <p class="mensagem" id="entrar-aviso">Campo senha obrigatório</p>
 
-            </div>
+                    </div>
             
-            <button onclick="cadastrar()" class="buttom-black">Cadastrar</button>
-            
+                    <div class="inputs">  
+                        <label for="confirmarsenha">Confirmar senha</label>
+                        <input type="password" name="confirmarsenha" minlength="8" required> 
+                        <p class="mensagem" id="confirma-aviso">Campo confirmar senha obrigatório</p>   
+                    </div>
+
+                </div>
+                
+                <button type="submit" class="buttom-black">Cadastrar</button>
+                
+            </form>
         </div>
     </div>
 
