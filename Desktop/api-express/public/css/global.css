@@ -157,7 +157,7 @@ header li:hover {
 .pesquisar {
     background-color: white;
     padding: 6px 10px;
-    width: 40%;
+    width: auto;
     border-radius: 20px;
     border: none;
     display: flex;

@@ -68,7 +68,7 @@
 
                     <div  class="button-comprar">
                        
-                        <button id="button-comprar"> </button>  
+                        <button onclick="pushCarrinho()" id="button-comprar"> </button>  
                        
                     </div>
                 </div>
@@ -77,7 +77,10 @@
             <script>
                 
                 window.onload = () => {
-                
+
+                    
+                   
+                    
 
                     let quantidade = document.getElementById("quantidade");
                     var estoque = 1
@@ -123,22 +126,23 @@
                     })
 
                    
-                   const buttonComprar = document.getElementById('button-comprar')
-                    
-                   buttonComprar.addEventListener('click',  () => {
-                   
-                    result
+               
 
-                   })
+
                    
-                   var result = () => {
-                    console.log(product)
-                   }
+                   
                    
                    
                 }
 
-               
+                function pushCarrinho(){
+                   
+                    var produto = <%- JSON.stringify(product)%>
+                    
+                    var carrinho = <%- JSON.stringify(carrinhoProdutos)%>
+                    carrinho.push(produto)
+                    console.log(carrinho)
+                   }
                 
 
             </script>

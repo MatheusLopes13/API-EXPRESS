@@ -7,14 +7,6 @@
         "valor": 600,
         "cor": "preto",
         "tamanhos": [38,39,40,42]
-    },
-    {
-        "id": 2,
-        "imagem": ["https://img.youcom.com.br/Custom/Content/Products/10/95/1095505_calca-sarja-cargo-joaquim-100369032_l2_637775741748402569.jpg","https://images.tcdn.com.br/img/img_prod/735068/calca_cargo_koloni_verde_escuro_2809_1_40eccc4a646da422b87768ea11d59f5c.jpeg", "https://77622.cdn.simplo7.net/static/77622/sku/mais-vendido-calca-cargo-reta-brothers-verde-militar-1676039621605.png"],
-        "nome": "Calça Chino",
-        "valor": 450,
-        "cor": "verde",
-        "tamanhos": [38,40,42]
-      
     }
+   
 ]

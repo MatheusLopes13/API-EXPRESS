@@ -11,12 +11,11 @@ home: (req, res) => {
 
 search: (req, res) => {
     let search = req.query.keywords
-    console.log(search)
     
     let result = allProducts.filter((item) => {
-      return item.nome == search
+      return item.nome.toLowerCase().includes(search)
     })
-    console.log(result)
+
     res.render('search', {product: result })
     
     
