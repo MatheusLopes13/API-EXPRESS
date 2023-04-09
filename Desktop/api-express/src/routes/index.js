@@ -1,20 +1,25 @@
 const express = require('express')
 const router = express.Router()
+const { body, validationResult } = require('express-validator');
 
 const homeController = require('../controllers/homeController')
-const { logarUsuario } = require('../controllers/loginController')
 // aqui eu criei minha variavel loginController que recebe o objeto que eu to exportando da loginController.js
 const loginController = require('../controllers/loginController')
 // aqui eu criei minha variavel pagamentoController que recebe o objeto que eu to exportando da pagamentoController.js
 const pagamentoController = require('../controllers/pagamentoController')
 
-
 router.get('/', homeController.home)
-// aqui eu criei a rota /Login e quando ele acessa a rota ele chama a minha callback
-router.get('/login', loginController.loginPage)
-// aqui eu criei a rota /Pagamento e quando ele acessa a rota ele chama a minha callback
 router.get('/pagamento', pagamentoController.pagamentoPage)
-router.post('/logar', loginController.logarUsuario)
-router.post('/criarconta', loginController.cadastrarUsuario)
+
+// endpoints/rotas da tela de login
+router.get('/login', loginController.renderizarTelaLogin)
+router.post('/logar', body('email').isEmail(), body('senha').isLength({ min: 8}), loginController.logarUsuario)
+router.post('/criarconta', 
+    body('email').isEmail().withMessage('Email invalido'), 
+    body('senha').isLength({ min: 8}),
+    body('nome').notEmpty().withMessage('Campo nome deve ser preenchido'),
+    body('sobrenome').notEmpty().withMessage('Campo sobrenome deve ser preenchido'),
+    loginController.cadastrarUsuario)
 
 module.exports = router
+
