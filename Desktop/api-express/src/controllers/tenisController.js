@@ -1,10 +1,11 @@
 const tenisProduct = require('../database/productTenis.json')
+const carrinhoProdutos = require('../database/carrinhoProdutos.json')
 
-const tennisController = {
+const teniscontroller = {
 tenis: (req, res) => {
-    res.render('tenis' , {tenisProduct} )
+    res.render('tenis' , {tenisProduct, carrinhoProdutos: carrinhoProdutos} )
     
 }
 }
 
-module.exports = tennisController
+module.exports = teniscontroller

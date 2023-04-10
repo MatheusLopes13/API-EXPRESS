@@ -1,7 +1,7 @@
 const express = require('express')
 const detalsController = require('../controllers/detalsController')
 const router = express.Router()
-
+const teniscontroller = require('../controllers/tenisController')
 const homeController = require('../controllers/homeController')
 
 // aqui eu criei minha variavel loginController que recebe o objeto que eu to exportando da loginController.js
@@ -12,7 +12,7 @@ const roupasController = require('../controllers/roupasControler')
 
 
 router.get('/',  homeController.home)
-
+router.get('/tenis', teniscontroller.tenis)
 router.get('/detals/:id', detalsController.getProduct)
 router.get('/search', homeController.search)
 
