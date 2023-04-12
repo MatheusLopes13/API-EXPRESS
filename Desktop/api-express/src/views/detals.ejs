@@ -131,15 +131,17 @@
 
                    
                    
-                   
-                   
+                    
+                    
                 }
 
+                
+                var produto = <%- JSON.stringify(product)%>
+                
+                var carrinho = <%- JSON.stringify(carrinhoProdutos)%>
+                
                 function pushCarrinho(){
                    
-                    var produto = <%- JSON.stringify(product)%>
-                    
-                    var carrinho = <%- JSON.stringify(carrinhoProdutos)%>
                     carrinho.push(produto)
                     console.log(carrinho)
                    }
