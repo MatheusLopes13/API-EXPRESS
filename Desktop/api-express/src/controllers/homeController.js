@@ -9,6 +9,7 @@ home: (req, res) => {
     
 }, 
 
+
 search: (req, res) => {
     let search = req.query.keywords
     
@@ -18,8 +19,6 @@ search: (req, res) => {
 
     res.render('search', {product: result })
     
-    
-  
 }
 
 }

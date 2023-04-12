@@ -10,10 +10,7 @@ const detalsController = {
          })
          
         res.render('detals' , {product: product,  carrinhoProdutos: carrinhoProdutos})
-    }, 
-
-  
-
+    }
     
     }
     

@@ -67,7 +67,7 @@
                     </div>
 
                     <div  class="button-comprar">
-                       
+                       <a href="/"> teste</a>
                         <button onclick="pushCarrinho()" id="button-comprar"> </button>  
                        
                     </div>
@@ -78,8 +78,6 @@
                 
                 window.onload = () => {
 
-                    
-                   
                     
 
                     let quantidade = document.getElementById("quantidade");
@@ -135,13 +133,14 @@
                    
                 }
 
+                var produto = <%- JSON.stringify(product)%>
+                var carrinho = <%- JSON.stringify(carrinhoProdutos)%>
+
                 function pushCarrinho(){
                    
-                    var produto = <%- JSON.stringify(product)%>
-                    
-                    var carrinho = <%- JSON.stringify(carrinhoProdutos)%>
                     carrinho.push(produto)
                     console.log(carrinho)
+                    
                    }
                 
 
