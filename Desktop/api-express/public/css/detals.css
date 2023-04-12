@@ -42,19 +42,15 @@ margin-left: 5rem;
     margin-top: 1rem;
 }
 
-.tamanhos {
-    display: flex;
-    gap: 7px;
-    margin-top: 10px;
-}
 
+/* 
 .tamanhos button {
     width: 2rem;
     height: 2rem;
     border-radius: 7px;
 
     
-}
+} */
 
 .adicionar-item {
 display: flex;
@@ -105,4 +101,10 @@ align-items: center;
 .tamanhos-produto {
     display: flex;
     gap: 8px;
+}
+
+.button-quantidade {
+    border-radius: 5px;
+    border-color: #bdbdbd;
+    border: none
 }
