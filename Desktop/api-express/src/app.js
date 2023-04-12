@@ -11,6 +11,7 @@ app.set("view engine", "ejs")
 // instanciando pasta views
 app.set("views", path.resolve("src", "views"))
 // liberando acesso a pasta public
+
 app.use(express.static(path.resolve("public")))
 
 /**
