@@ -12,29 +12,34 @@ home: (req, res) => {
 
 search: (req, res) => {
     let search = req.query.keywords
+
+      if (search == ('new')) {
+        let result = tenisProduct.filter((item) => {
+          return item.nome.toLowerCase().includes(search)
+        })    
+        res.render('search', {product: result })              
+          
+      } 
+
+      if (search == ('balance')) {
+        let result = tenisProduct.filter((item) => {
+          return item.nome.toLowerCase().includes(search)
+        })
     
-    let result = allProducts.filter((item) => {
-      return item.nome.toLowerCase().includes(search)
-    })
+        res.render('search', {product: result })              
+          
+      } 
+      else {
 
-    res.render('search', {product: result })
+        let result = allProducts.filter((item) => {
+          return item.nome.toLowerCase().includes(search)
+        })
     
-    
-  
-},
-
-search: (req, res) => {
-  let search = req.query.keywords
-  
-  let result = tenisProduct.filter((item) => {
-    return item.nome.toLowerCase().includes(search)
-  })
-
-  res.render('search', {product: result })
-  
-  
-
-}
+        res.render('search', {product: result })        
+        
+      }
+       
+  }
 
 }
 
