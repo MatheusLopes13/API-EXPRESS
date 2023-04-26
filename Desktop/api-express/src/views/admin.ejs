@@ -16,27 +16,36 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
           <% } %>
       <% } %>
     
-    <form action="/produto" method="post">  
+    <form action="/product" method="post">  
 
-        <div class="produto"> 
+        <div class="product"> 
             <div>
-                <label  for="text">Marca</label>  
-                <input type="text" name="nomeProduto">
+                <label  for="text">Nome</label>  
+                <input type="text" name="nameProduct">
             </div>
 
             <div>
                 <label  for="text">Valor</label>  
-                <input type="text" name="valorProduto">
+                <input type="text" name="valueProduct">
             </div>
 
             <div>
                 <label  for="text">Tamanho</label>  
-                <input type="text" name="tamanhoProduto">
+                <input type="text" name="sizeProduct">
             </div>
 
             <div>
                 <label  for="text">Descrição</label>  
-                <input type="text" name="descricaoProduto">
+                <input type="text" name="descriptionProduct">
+            </div>
+
+            <div>
+                <label  for="text">Cor </label>  
+                <input type="text" name="colorProduct">
+            </div>
+            <div>
+                <label  for="text">Imagem </label>  
+                <input type="text" name="pictureProduct">
             </div>
 
             <button type="submit">Enviar</button>
@@ -48,6 +57,26 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
         </div>
 
     </form>
+
+    <div class="container">
+        <% if (typeof products !== 'undefined') { %>
+            <% products.forEach(item => { %>
+                <div class="produto">
+                    
+                    <p> quantidade </p>
+                    <p> <%= item.name %> </p>
+                    <p><%= item.value %> </p>
+                    <p><%= item.size %> </p>
+                    <p><%= item.color %> </p>
+                    <p><%= item.description %> </p>
+                    <p><%=  %> </p>
+    
+                </div>
+           <%})%>
+    
+           <% } %>
+        </div>
+     
     
     <%- include('includes/footer') %>
   

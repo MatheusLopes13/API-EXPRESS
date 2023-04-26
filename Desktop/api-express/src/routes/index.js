@@ -15,7 +15,13 @@ router.get('/pagamento', pagamentoController.pagamentoPage)
 // endpoints/rotas da tela de login
 router.get('/login', loginController.renderizarTelaLogin)
 router.get('/admin', adminController.renderizarAdminPage)
-router.post('/produto', body('marca').notEmpty().withMessage('Marca precisa ser preenchido!'), adminController.addProduto)
+router.post('/product', 
+    body('nameProduct').notEmpty().withMessage('Marca precisa ser preenchido!'),
+    body('valueProduct').notEmpty().withMessage('Valor precisa ser preenchido!'),
+    body('sizeProduct').notEmpty().withMessage('Tamanho precisa ser preenchido!'),
+    body('descriptionProduct').notEmpty().withMessage('Descrição precisa ser preenchido!'),
+    body('colorProduct').notEmpty().withMessage('Cor precisa ser preenchido!'),
+    adminController.addProduct)
 router.post('/logar', body('email').isEmail(), body('senha').isLength({ min: 8}), loginController.logarUsuario)
 router.post('/criarconta', 
     body('email').isEmail().withMessage('Email invalido'), 
