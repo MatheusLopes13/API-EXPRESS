@@ -43,12 +43,19 @@
             <i class="fa-solid fa-cart-shopping destaque"></i>        
         </a>
 
-        <a href="/login">
+       
+        <% if (typeof usuario !== 'undefined') { %>
+            <div class="user-logado">
+                <p class="iniciais"> <%= usuario.iniciais %> </p>
+            </div>
+        <% } else { %>
+            <a href="/login">
 
-            <i class="fa-solid fa-user destaque"></i>
-
-        </a>
-        
+                <i class="fa-solid fa-user destaque"></i>
+    
+            </a> 
+        <% } %>
+       
         
         
     </div>

@@ -4,9 +4,11 @@
 <%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
 
 <body>
-    
-    <%- include('includes/header') %>
-
+    <% if (typeof usuario !== 'undefined') { %>
+        <%- include('includes/header', { usuario }) %>
+    <% } else { %>
+        <%- include('includes/header') %>
+    <% } %>
     <main>                                    
         <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">  
     </main>
