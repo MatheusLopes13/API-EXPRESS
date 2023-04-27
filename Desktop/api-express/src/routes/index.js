@@ -1,7 +1,9 @@
 const express = require('express')
+const detalsController = require('../controllers/detalsController')
 const router = express.Router()
 const { body, validationResult } = require('express-validator');
 
+const teniscontroller = require('../controllers/tenisController')
 const homeController = require('../controllers/homeController')
 // aqui eu criei minha variavel loginController que recebe o objeto que eu to exportando da loginController.js
 const loginController = require('../controllers/loginController')

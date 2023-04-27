@@ -3,17 +3,19 @@
 
 <%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
 
-<body>
-    
-    <%- include('includes/header') %>
+    <body>
 
-    <main>                                    
-        <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">  
-    </main>
 
-    <h3>NOVIDADES</h3>
 
-    <div class="container">
+        <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
+
+            <main>
+                <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">
+            </main>
+
+            <h3>NOVIDADES</h3>
+
+            <div class="container">
 
         <% productNovidades.forEach(item => { console.log(item)%>
             <div class="produto">
@@ -27,11 +29,14 @@
                 </div>
             </div>
 
-       <%})%>
+                    <%})%>
 
-    </div>
-   
-       <%- include('includes/footer') %>
+            </div>
 
-</body>
+          
+
+            <%- include('includes/footer') %>
+
+    </body>
+
 </html>

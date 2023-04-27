@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
+
+
+<body>
+    <div class="container">
+
+        <% product.forEach((item) => {%>
+            
+       
+            <div class="produto">
+                <img src=" <%= item.imagem[1] %> " alt="produto">
+                <p>
+                    <%= item.nome %>
+                </p>
+                <p>
+                    teste
+                    R$ <%= item.valor %>
+                </p>
+                <div>
+
+                    <a href="">
+                        <button> Comprar </button>
+                    </a>
+                </div>
+            </div>
+
+            <% }) %>
+
+    </div>
+
+  
+
+    <%- include('includes/footer') %>
+
+    
+</body>
+
+</html>
