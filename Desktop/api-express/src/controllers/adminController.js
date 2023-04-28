@@ -1,12 +1,13 @@
 
 const { validationResult } = require('express-validator');
 // aqui eu criei meu objeto Pagamento que tem um atributo e esse atributo é uma função
-const productNovidades = require('../database/productNovidades.json')
+const productNovidades = require('../database/productNovidades.json');
+const carrinhoProdutos = require('../database/carrinhoProdutos.json')
 // importação do nosso dataBase 
 const adminController = {
 // aqui é o meu atributo função 
     renderizarAdminPage: (req, res) => {
-        res.render('admin')
+        res.render('admin', { carrinhoProdutos: carrinhoProdutos })
         
     }, 
 

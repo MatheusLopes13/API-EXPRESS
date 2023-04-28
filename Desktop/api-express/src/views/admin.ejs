@@ -5,7 +5,7 @@
     
 <!-- A função include importa um trecho de código de outro arquivo
 include(caminho do arquivo que eu quero importar o bloco de código)  -->
-    <%- include('includes/header') %>
+<%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
     <% if (typeof errors !== 'undefined') { %>
         <% for(let error in errors) { %>
             <script>
@@ -16,7 +16,7 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
           <% } %>
       <% } %>
     
-    <form action="/product" method="post">  
+    <form class="form" action="/product" method="post">  
 
         <div class="product"> 
             <div>
@@ -45,7 +45,7 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
             </div>
             <div>
                 <label  for="text">Imagem </label>  
-                <input type="text" name="pictureProduct">
+                <input type="file" name="pictureProduct">
             </div>
 
             <button type="submit">Enviar</button>
