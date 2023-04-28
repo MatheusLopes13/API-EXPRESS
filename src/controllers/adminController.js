@@ -3,6 +3,7 @@ const { validationResult } = require('express-validator');
 // aqui eu criei meu objeto Pagamento que tem um atributo e esse atributo é uma função
 const productNovidades = require('../database/productNovidades.json');
 const carrinhoProdutos = require('../database/carrinhoProdutos.json')
+
 // importação do nosso dataBase 
 const adminController = {
 // aqui é o meu atributo função 
@@ -14,8 +15,9 @@ const adminController = {
     addProduct:(req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
+            console.log(errors)
             console.log(errors.mapped())
-            res.render('admin', { errors: errors.array() })
+            res.render('admin',{ errors: errors.array(), carrinhoProdutos })
         }
         else {         
             const add_product = {
@@ -29,13 +31,17 @@ const adminController = {
             }
             productNovidades.push(add_product)
 
-            
-            res.render("admin", { products: productNovidades}  )  
+            res.render("admin", { products: productNovidades, carrinhoProdutos}  )  
         }
+    },
+
+    deletProduct: (req, res) => {
+        let product = req.params.id
+    },
+
+    editProduct: (req, res) => {
+        let product = req.params.id
     }
-
-
-
 }
 
 // aqui eu to exportando o meu objeto

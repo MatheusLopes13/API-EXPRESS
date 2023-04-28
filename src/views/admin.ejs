@@ -8,14 +8,15 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
 <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
     <% if (typeof errors !== 'undefined') { %>
         <% for(let error in errors) { %>
-            <script>
+            <script >
                 toastr.options.progressBar = true;
                 toastr.options.closeButton = true;
                 toastr.error('<%= errors[error].msg %>')
+console.log('teste')
             </script>
           <% } %>
       <% } %>
-    
+        
     <form class="form" action="/product" method="post">  
 
         <div class="product"> 
@@ -44,8 +45,8 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
                 <input type="text" name="colorProduct">
             </div>
             <div>
-                <label  for="text">Imagem </label>  
-                <input type="file" name="pictureProduct">
+                <!-- <label  for="text">Imagem </label>  
+                <input type="file" name="pictureProduct"> -->
             </div>
 
             <button type="submit">Enviar</button>
@@ -70,6 +71,10 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
                     <p><%= item.color %> </p>
                     <p><%= item.description %> </p>
                     <p><%=  %> </p>
+                    <a href="/admin/delet/<%= item.id %>">Excluir</a>
+                    <a href="/admin/edit/<%= item.id %>">EDITAR</a>
+
+                    
     
                 </div>
            <%})%>
