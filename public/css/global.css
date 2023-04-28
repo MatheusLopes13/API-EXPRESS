@@ -249,3 +249,18 @@ gap: 2rem;
 
     
 }
+
+.user-logado{
+    border-radius: 50%;
+    height: 2.2rem;
+    width: 2.2rem;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.iniciais{
+    color: white;
+    font-weight: bold
+}

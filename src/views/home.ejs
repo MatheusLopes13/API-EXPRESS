@@ -16,10 +16,12 @@
             <h3>NOVIDADES</h3>
 
             <div class="container">
-
+            <% if (typeof allProducts !== 'undefined') { %>
                 <% allProducts.forEach(item=> { %>
                     <div class="produto">
-                        <img src="<%= item.imagem[0] %>" alt="produto">
+                        <% if (item.imagem) { %>
+                            <img src="<%= item.imagem[0] %>" alt="produto">
+                        <% } %>
                         <p>
                             <%= item.nome %>
                         </p>
@@ -35,6 +37,7 @@
                     </div>
 
                     <%})%>
+                <% } %>
 
             </div>
 
