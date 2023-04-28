@@ -12,7 +12,7 @@ app.set("view engine", "ejs")
 //instaciando Itens EJS - tela Skate.ejs
 
 // instanciando pasta views
-app.set("views", path.resolve("src", "views"))
+app.set("views", path.resolve("src", "views"));
 // liberando acesso a pasta public
 
 app.use(express.static(path.resolve("public")))
@@ -23,5 +23,5 @@ app.use(express.static(path.resolve("public")))
 app.use(routes)
 
 app.listen(3000, () => {
-  console.log('Servidor Rodando!')
+  console.log('Servidor Rodando!');
 })
