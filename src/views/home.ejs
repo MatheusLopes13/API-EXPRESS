@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
+
+    <body>
+
+
+
+        <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
+
+            <main>
+                <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">
+            </main>
+
+            <h3>NOVIDADES</h3>
+
+            <div class="container">
+            <% if (typeof allProducts !== 'undefined') { %>
+                <% allProducts.forEach(item=> { %>
+                    <div class="produto">
+                        <% if (item.imagem) { %>
+                            <img src="<%= item.imagem[0] %>" alt="produto">
+                        <% } %>
+                        <p>
+                            <%= item.nome %>
+                        </p>
+                        <p>
+                            R$ <%= item.valor %>
+                        </p>
+                        <div>
+
+                            <a href="/detals/<%= item.id %>">
+                                <button> Comprar </button>
+                            </a>
+                        </div>
+                    </div>
+
+                    <%})%>
+                <% } %>
+
+            </div>
+
+          
+
+            <%- include('includes/footer') %>
+
+    </body>
+
+    
+</html>
