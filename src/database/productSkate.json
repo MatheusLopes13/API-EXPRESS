@@ -1,0 +1,69 @@
+[
+    {
+          "id": 1,
+          "imagem": "public/images/skate/skate/Skate - Shapes/blvr1-removebg-preview.png",
+          "nome": "Boulevard - Tiago Lemos",
+          "valor": 800,
+          "cor": "preto"
+        
+      },
+      {
+          "id": 2,
+          "imagem": "public/images/skate/skate/Skate - Shapes/blvr2-removebg-preview.png",
+          "nome": "Boulevar - Rodrigo Petersen",
+          "valor": 800,
+          "cor": "verde"
+      },
+      {
+          "id": 3,
+          "imagem": "public/images/skate/skate/Skate - Shapes/dgk1-removebg-preview.png",
+          "nome": "DGK",
+          "valor": 900,
+          "cor": "arte gráfica"
+      },
+      {
+          "id": 4,
+          "imagem": "public/images/skate/skate/Skate-Trucks/ind1-removebg-preview.png",
+          "nome": "Independent",
+          "valor": 200,
+          "cor": "prata"
+      },
+      {
+          "id": 5,
+          "imagem": "public/images/skate/skate/Skate-Trucks/ind3-removebg-preview.png",
+          "nome": "Calça Chino",
+          "valor": 250,
+          "cor": "prata"
+      },
+      {
+          "id": 6,
+          "imagem":"public/images/skate/skate/Skate-Trucks/venture1-removebg-preview.png",
+          "nome": "Venture",
+          "valor": 350,
+          "cor": "Preto" 
+      },
+      {
+          "id": 7,
+          "imagem": "public/images/skate/Skate-Rodas/bones1.png",
+          "nome": "Bones - Trent MccLung",
+          "valor": 200,
+          "cor": "arte gráfica"
+      },
+      {
+          "id": 8,
+          "imagem": "public/images/skate/Skate-Rodas/bones2.png",
+          "nome": "Bones - Tj Rogers",
+          "valor": 200,
+          "cor": "arte gráfica"
+      },
+      {
+        "id": 9,
+        "imagem":"public/images/skate/Skate-Rodas/element1.png",
+        "nome": "Element",
+        "valor": 150,
+        "cor": "Preto e Vermelho"
+    }
+  ]
+  
+  
+  
