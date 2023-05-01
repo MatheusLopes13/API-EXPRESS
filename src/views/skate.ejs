@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include('includes/head', { linkCss: 'css/roupas.css' , title: 'Skate' }) %>
+<%- include('includes/head', { linkCss: 'css/skate.css' , title: 'Skate' }) %>
 
 <body> 
   <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
 
+  <main>
     <div class="main">
         
         <div class="filter">
@@ -59,122 +60,24 @@
         </div>
 
         
-        <div class="produtos">
-            <% skateProduct.forEach(item=> { %>
-            <div class="destaque2">
-                <img src= "public/images/skate/skate/Skate - Shapes/blvr1-removebg-preview.png" alt="blvr1">
-                <p>
-                    <%= item.nome %>
-                  </p>
-                  <p>
-                    R$ <%= item.valor %>
-                  </p>
-                <div class="comprar-adicionar">
-                    <button>
-                        Comprar
-                    </button>
-                </div>
-            </div>
-            <div class="destaque2">
-                <img src="public/images/skate/skate/Skate - Shapes/blvr2-removebg-preview.png" alt="blvr2">
-                <p>
-                    <%= item.nome %>
-                  </p>
-                  <p>
-                    R$ <%= item.valor %>
-                  </p>
-                <div class="comprar-adicionar">
-                    <button>
-                        Comprar
-                    </button>
-                </div>
-            </div>    
-            <div class="destaque2">
-                <img src="public/images/skate/skate/Skate - Shapes/dgk1-removebg-preview.png" alt="dgk">
-                <p>
-                    <%= item.nome %>
-                  </p>
-                  <p>
-                    R$ <%= item.valor %>
-                  </p>
-                <div class="comprar-adicionar">
-                    <button>
-                        Comprar
-                    </button>
-                </div>
-            <h1>Truck</h1>
-                <div class="truck">
-                    <img src="public/images/skate/skate/Skate-Trucks/ind1-removebg-preview.png" alt="ind">
+        <div class="container-1">
+            <% skateProduct.forEach(item => { %>
+    
+                <div class="destaque-2">
+                    <img src="<%= item.imagem[0] %>" alt="">
                     <p>
                         <%= item.nome %>
-                      </p>
-                      <p>
-                        R$ <%= item.valor %>
-                      </p>
-                    <div>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-                <div class="truck">
-                    <img src="public/images/skate/skate/Skate-Trucks/ind3-removebg-preview.png" alt="ind2">
+                    </p>
                     <p>
-                        <%= item.nome %>
-                      </p>
-                      <p>
                         R$ <%= item.valor %>
-                      </p>
-                    <div>
-                        <button>Comprar</button>
+                    </p>
+                <div>
+    
+                        <a href="/detals/<%= item.id %>">
+                            <button> Comprar </button>
+                        </a>
                     </div>
-                </div>
-                <div class="truck">
-                    <img src="public/images/skate/skate/Skate-Trucks/venture1-removebg-preview.png" alt="venture1">
-                    <p>
-                        <%= item.nome %>
-                      </p>
-                      <p>
-                        R$ <%= item.valor %>
-                      </p>
-                    <div>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-                <h1>Rodas</h1>
-                <div class="rodas">
-                    <img src="public/images/skate/Skate-Rodas/bones1.png" alt="bones1">
-                    <p>
-                        <%= item.nome %>
-                      </p>
-                      <p>
-                        R$ <%= item.valor %>
-                      </p>
-                    <div>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-                <div class="rodas">
-                    <img src="public/images/skate/Skate-Rodas/bones2.png" alt="bones2">
-                    <p>
-                        <%= item.nome %>
-                      </p>
-                      <p>
-                        R$ <%= item.valor %>
-                      </p>
-                    <div>
-                        <button>Comprar</button>
-                    </div>
-                </div>
-                <div class="rodas">
-                    <img src="public/images/skate/Skate-Rodas/element1.png" alt="element2">
-                    <p>
-                        <%= item.nome %>
-                      </p>
-                      <p>
-                        R$ <%= item.valor %>
-                      </p>
-                    <div>
-                        <button>Comprar</button>
-                    </div>
+                    
                 </div>
 
 
@@ -183,6 +86,7 @@
         </div>
 
     </div>
+  </main>
 
     <%- include('includes/footer') %>
 
