@@ -1,0 +1,17 @@
+module.exports = (sequelize, DataType) => {
+  const Order = sequelize.define('Order', {
+    id: {
+      type: DataType.INTEGER,
+      primaryKey: true,
+      autoIncrement: true
+    },
+    number: DataType.STRING(45),
+    qtde: DataType.DECIMAL(45),
+    user_iduser: DataType.INTEGER    
+  }, {
+    timestamps: false,
+    tableName: 'order'
+  })
+​
+  return Order
+}
