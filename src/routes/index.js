@@ -22,6 +22,8 @@ router.post('/product',
     body('descriptionProduct').notEmpty().withMessage('Descrição precisa ser preenchido!'),
     body('colorProduct').notEmpty().withMessage('Cor precisa ser preenchido!'),
     adminController.addProduct)
+router.delete('admin/delet/:product', adminController.deletProduct)
+router.put('/admim/edit/:product', adminController.editProduct)
 router.get('/login', loginController.renderizarTelaLogin) 
 router.get('/pagamento', pagamentoController.pagamentoPage)
 router.get('/roupas', roupasController.roupasPage)
