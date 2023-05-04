@@ -9,6 +9,11 @@ header i{
     color: black;
 }
 
+.buttonSearch {
+    border:none;
+    background-color: transparent;
+}
+
 
 header ul a{
     color: black;
