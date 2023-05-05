@@ -120,16 +120,9 @@ header ul {
     color: #D9D9D9  ;
 }
 
-header li:hover {
-    -webkit-transform: scale(1.5);
-    transform: scale(1.5);
-    transition: all 0.5s;
-    cursor: pointer;
-}
 
-.dropdown{
-    display: none;
-}
+
+
 
 .menu-1 {
     min-width: 30%;
@@ -283,4 +276,14 @@ gap: 2rem;
 .iniciais{
     color: white;
     font-weight: bold
+}
+
+.dropdown-toggle::after{
+    content: none !important;
+
+}
+
+
+.dropdown-item:hover{
+scale: none;
 }

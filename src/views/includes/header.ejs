@@ -54,10 +54,22 @@
 
         <% if (typeof usuario !== 'undefined') { %>
 
-            <div class="iniciais">
+            <!-- <div class="iniciais">
     
                 <p class="margin-0"><%= usuario.iniciais %></p>
-    
+                
+            </div> -->
+
+            <div class="dropdown iniciais">
+                <p class="margin-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <%= usuario.iniciais %>
+                </p>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="../tenis.ejs">Perfil</li>
+                    <li><a class="dropdown-item" href="../roupas.ejs">Meus Pedidos</li>
+                    <li><a class="dropdown-item" href="">Sair</a></li>
+                    
+                </ul>
             </div>
         <% }  else { %>
             
