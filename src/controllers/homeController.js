@@ -3,7 +3,8 @@ const allProducts = require('../database/allProduct.json')
 const carrinhoProdutos = require('../database/carrinhoProdutos.json')
 
 
-const homeController = {
+const 
+homeController = {
 home: (req, res) => {
     res.render('home' , {allProducts: allProducts, carrinhoProdutos: carrinhoProdutos } )
     
