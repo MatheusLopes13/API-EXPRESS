@@ -7,6 +7,7 @@ const adminController = require('../controllers/adminController');
 const loginController = require('../controllers/loginController')
 const pagamentoController = require('../controllers/pagamentoController')
 const roupasController = require('../controllers/roupasControler')
+const skateController = require('../controllers/skateController')
 const { body } = require('express-validator')
 
 
@@ -27,6 +28,7 @@ router.put('/admim/edit/:product', adminController.editProduct)
 router.get('/login', loginController.renderizarTelaLogin) 
 router.get('/pagamento', pagamentoController.pagamentoPage)
 router.get('/roupas', roupasController.roupasPage)
+router.get('/skate', skateController.skatePage)
 router.post('/logar', loginController.logarUsuario)
 
 module.exports = router
