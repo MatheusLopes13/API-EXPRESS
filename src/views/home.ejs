@@ -6,9 +6,11 @@
     <body>
 
 
-
-        <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
-
+        <% if (typeof usuario !== 'undefined') { %>
+            <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos, usuario}) %>
+        <% } else { %>
+            <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
+        <% } %>
             <main>
                 <img class="img-home" src="images/newCapaHome.jpg" alt="capahome">
             </main>

@@ -52,11 +52,23 @@
             <i class="fa-solid fa-cart-shopping destaque"></i>
         </a>
 
-        <a href="/login">
+        <% if (typeof usuario !== 'undefined') { %>
 
-            <i class="fa-solid fa-user destaque"></i>
+            <div class="iniciais">
+    
+                <p class="margin-0"><%= usuario.iniciais %></p>
+    
+            </div>
+        <% }  else { %>
+            
+            <a href="/login">
+    
+                <i class="fa-solid fa-user destaque"></i>
+    
+            </a>
 
-        </a>
+        <% } %>
+
 
 
 
