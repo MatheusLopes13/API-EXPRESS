@@ -2,88 +2,108 @@
 <html lang="en">
     <%- include('includes/head', { linkCss: 'css/admin.css' , title: 'admin' }) %>
 <body>
-    
-<!-- A função include importa um trecho de código de outro arquivo
-include(caminho do arquivo que eu quero importar o bloco de código)  -->
-<%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
-    <% if (typeof errors !== 'undefined') { %>
-        <% for(let error in errors) { %>
-            <script >
-                toastr.options.progressBar = true;
-                toastr.options.closeButton = true;
-                toastr.error('<%= errors[error].msg %>')
-console.log('teste')
-            </script>
-          <% } %>
-      <% } %>
-        
-    <form class="form" action="/product" method="post">  
+        <!-- A função include importa um trecho de código de outro arquivo
+            include(caminho do arquivo que eu quero importar o bloco de código)  -->
 
-        <div class="product"> 
-            <div>
-                <label  for="text">Nome</label>  
-                <input type="text" name="nameProduct">
-            </div>
+    <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
 
-            <div>
-                <label  for="text">Valor</label>  
-                <input type="text" name="valueProduct">
-            </div>
+        <div class="display-flex">
 
-            <div>
-                <label  for="text">Tamanho</label>  
-                <input type="text" name="sizeProduct">
-            </div>
+                <% if (typeof errors !== 'undefined') { %>
+                    <% for(let error in errors) { %>
+                        <script>
+                            toastr.options.progressBar = true;
+                            toastr.options.closeButton = true;
+                            toastr.error('<%= errors[error].msg %>')
 
-            <div>
-                <label  for="text">Descrição</label>  
-                <input type="text" name="descriptionProduct">
-            </div>
+                        </script>
+                    <% } %>
+                <% } %>
 
-            <div>
-                <label  for="text">Cor </label>  
-                <input type="text" name="colorProduct">
-            </div>
-            <div>
-                <!-- <label  for="text">Imagem </label>  
-                <input type="file" name="pictureProduct"> -->
-            </div>
-
-            <button type="submit">Enviar</button>
-
-            <!-- <div>
-                <label  for="text">Imagem</label>  
-                <input type="text" name="imagemProduto" required>
-            </div> -->
         </div>
 
-    </form>
+            <div class="products-wrapper">
+                            
+                    <div class="formProduct">
+                        <h1 class="products-title">Formulário de produtos</h1>
+                    </div>    
+                        
+                        <form class="form" action="/product" method="post">  
 
-    <div class="container">
-        <% if (typeof products !== 'undefined') { %>
-            <% products.forEach(item => { %>
-                <div class="produto">
-                    
-                    <p> quantidade </p>
-                    <p> <%= item.name %> </p>
-                    <p><%= item.value %> </p>
-                    <p><%= item.size %> </p>
-                    <p><%= item.color %> </p>
-                    <p><%= item.description %> </p>
-                    <p><%=  %> </p>
-                    <a href="/admin/delet/<%= item.id %>">Excluir</a>
-                    <a href="/admin/edit/<%= item.id %>">EDITAR</a>
+                            <div class="product"> 
+                                <div>
+                                    <label  for="text">Nome</label>  
+                                    <input type="text" name="nameProduct" placeholder="Informe o nome do produto">
+                                </div>
+
+                                <div>
+                                    <label  for="text">Valor</label>  
+                                    <input type="text" name="valueProduct" placeholder="Informe o preço do produto">
+                                </div>
+
+                                <div>
+                                    <label  for="text">Descontos</label>  
+                                    <input type="text" name="discountProduct" >
+                                </div>
+
+                                <div>
+                                    <label  for="text">Tamanho</label>  
+                                    <input type="text" name="sizeProduct" >
+                                </div>
+
+                                <div class="description">
+                                    <label  for="text">Descrição</label>  
+                                    <input type="text" name="descriptionProduct" >
+                                </div>
+
+                                <div>
+                                    <label  for="text">Cor </label>  
+                                    <input type="text" name="colorProduct">
+                                </div>
+                                <div>
+                                    <!-- <label  for="text">Imagem </label>  
+                                    <input type="file" name="pictureProduct"> -->
+                                </div>
+
+                                <button type="submit">Enviar</button>
+
+                                <!-- <div>
+                                    <label  for="text">Imagem</label>  
+                                    <input type="text" name="imagemProduto" required>
+                                </div> -->
+                            </div>
+
+                        </form>
 
                     
-    
+            </div>
+
+                <div class="container">
+                        <% if (typeof products !== 'undefined') { %>
+                            <% products.forEach(item => { %>
+                                <div class="productAdd">
+
+                                    <p><%= item.name %> </p>
+                                    <p><%= item.value %> </p>
+                                    <p><%= item.size %> </p>
+                                    <p><%= item.color %> </p>
+                                    <p><%= item.description %> </p>
+                                    <p><%=  %> </p>
+                                    
+                                    <a href="/admin/delet/<%= item.id %>">Excluir</a>
+                                    <a href="/admin/edit/<%= item.id %>">EDITAR</a>
+
+                                    
+                    
+                                </div>
+                        <%})%>
+                    
+                        <% } %>
                 </div>
-           <%})%>
-    
-           <% } %>
-        </div>
-     
-    
+                
+                
     <%- include('includes/footer') %>
-  
+    
 </body>
+
 </html>
