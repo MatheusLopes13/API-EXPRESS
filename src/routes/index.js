@@ -8,6 +8,7 @@ const loginController = require('../controllers/loginController')
 const pagamentoController = require('../controllers/pagamentoController')
 const roupasController = require('../controllers/roupasControler')
 const { body } = require('express-validator')
+const perfilController = require('../controllers/perfilController')
 
 
 router.get('/',  homeController.home)
@@ -28,6 +29,8 @@ router.get('/login', loginController.renderizarTelaLogin)
 router.get('/pagamento', pagamentoController.pagamentoPage)
 router.get('/roupas', roupasController.roupasPage)
 router.post('/logar', loginController.logarUsuario)
+router.get('/perfil', perfilController.renderizarTelaPerfil)
+router.post('/editar/perfil', perfilController.editarPerfil)
 
 module.exports = router
 
