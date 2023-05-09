@@ -1,12 +1,20 @@
 
-const allProducts = require('../database/allProduct.json')
+// const allProducts = require('../database/allProduct.json')
 const carrinhoProdutos = require('../database/carrinhoProdutos.json')
 
+const {Product} = require('../models')
 
-const 
-homeController = {
-home: (req, res) => {
-    res.render('home' , {allProducts: allProducts, carrinhoProdutos: carrinhoProdutos } )
+const homeController = {
+home: async (req, res) => {
+  try {
+    const produto = await Product.findAll()
+
+    res.render('home' , {allProducts: produto , carrinhoProdutos: carrinhoProdutos } ) 
+  } catch (error) {
+    res.status(400).json({ error })
+    
+  }
+   
     
 }, 
 
