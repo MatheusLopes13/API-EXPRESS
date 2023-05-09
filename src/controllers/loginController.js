@@ -17,7 +17,8 @@ const loginController = {
             console.log(errors.mapped())
             res.render('login', { errors: errors.array() })
         } else {
-            res.redirect('/')
+           // res.redirect('/')
+           console.log(req.body)
         }
     },
 
@@ -55,6 +56,10 @@ const loginController = {
 
         
     },   
+    deslogarUsuario: (req, res) => {
+        res.render('home', { allProducts, carrinhoProdutos: carrinhoProdutos  });
+
+    }
 } 
 // aqui eu to exportando o meu objeto
 module.exports= loginController
