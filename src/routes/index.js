@@ -32,13 +32,13 @@ router.post('/logar', loginController.logarUsuario)
 router.get('/perfil', perfilController.renderizarTelaPerfil)
 router.post('/editar/perfil', perfilController.editarPerfil)
 router.post('/criarconta',
-body('nome').isEmpty().withMessage('Nome precisa ser preenchido!'),
-body('sobrenome').isEmpty().withMessage('Sobrenome precisa ser preenchido!'), 
-body('email').isEmpty().withMessage('Email precisa ser preenchido!'),
-body('rua').isEmpty().withMessage('Rua precisa ser preenchido!'),
-body('numero').isEmpty().withMessage('Número precisa ser preenchido!'),
-body('cep').isEmpty().withMessage('CEP precisa ser preenchido!'),
-body('senhaNova').isEmpty().withMessage('Senha precisa ser preenchido!'),
+body('nome').notEmpty().withMessage('Nome precisa ser preenchido!'),
+body('sobrenome').notEmpty().withMessage('Sobrenome precisa ser preenchido!'), 
+body('email').notEmpty().withMessage('Email precisa ser preenchido!'),
+body('endereço').notEmpty().withMessage('Rua precisa ser preenchido!'),
+body('numero').notEmpty().withMessage('Número precisa ser preenchido!'),
+//body('cep').notEmpty().withMessage('CEP precisa ser preenchido!'),
+body('senha').notEmpty().withMessage('Senha precisa ser preenchido!'),
 body('confirmarSenha').isEmpty().withMessage('Confirmar senha precisa ser preenchido!'),
 loginController.cadastrarUsuario)
 router.get('/sair', loginController.deslogarUsuario)

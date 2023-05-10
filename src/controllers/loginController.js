@@ -10,15 +10,31 @@ const loginController = {
     renderizarTelaLogin: (req, res) => {
         res.render('login')
     },
-    cadastrarUsuario: (req, res) => {
+    cadastrarUsuario: async (req, res) => {
         //aqui eu fiz uma receitinha de bolo pro meu sistema me retornar caso encontre erros
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             console.log(errors.mapped())
             res.render('login', { errors: errors.array() })
         } else {
-           // res.redirect('/')
-           console.log(req.body)
+            const data = req.body
+            console.log(data)
+            const usuario = await User.findOne({ where: { email: data.email } })
+            if (usuario) {
+                res.send('Email já cadastrado')
+            }
+
+            if (data.senha !== data.confirmarsenha ){
+                res.send('Senhas não são iguais')
+            }
+
+            data.administrador = 0
+            delete data.confirmarsenha
+
+            const newUser = await User.create(data);
+            res.send(newUser)
+
+           
         }
     },
 
@@ -34,13 +50,13 @@ const loginController = {
             const email = req.body.email
             const senha = req.body.senha
             // aqui estou tentando encontrar alguem que tenha o mesmo email e senha digitados na pg de login
-            const usuario = await User.findAll({ where: { email: email, senha: senha } })
+            const usuario = await User.findOne({ where: { email: email, senha: senha } })
             console.log('>>>>>',usuario)
             // se caso o usuario nao for cadastrado 
-            if(!usuario || usuario.length === 0) {
+            if(usuario === null) {
                 res.send("Usuario não encontrado")
             } else {
-                const userLogged = usuario[0].dataValues
+                const userLogged = usuario.dataValues
                 let iniciais = ''
                 iniciais += userLogged.nome.substring(0, 1)
                 iniciais += userLogged.sobrenome.substring(0, 1)
