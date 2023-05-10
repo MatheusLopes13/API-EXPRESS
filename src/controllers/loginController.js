@@ -1,15 +1,15 @@
 // eu criei meu objeto Login que tem um atributo e esse atributo é uma função
-const loginMock = require("../database/login.json")
+
 const { validationResult } = require('express-validator');
 const allProducts = require('../database/allProduct.json')
-const carrinhoProdutos = require('../database/carrinhoProdutos.json')
+const carrinhoProdutos = require('../database/carrinhoProdutos.json');
+const {User} = require('../models')
 
 const loginController = {
-// aqui é o meu atributo função    
+// aqui é o meu atributo função   
     renderizarTelaLogin: (req, res) => {
         res.render('login')
     },
-    
     cadastrarUsuario: (req, res) => {
         //aqui eu fiz uma receitinha de bolo pro meu sistema me retornar caso encontre erros
         const errors = validationResult(req);
@@ -23,7 +23,7 @@ const loginController = {
     },
 
     //aqui a mesma coisa, verificando se tem erro
-    logarUsuario: (req, res) => { 
+    logarUsuario: async (req, res) => { 
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             console.log(errors.mapped())
@@ -34,22 +34,18 @@ const loginController = {
             const email = req.body.email
             const senha = req.body.senha
             // aqui estou tentando encontrar alguem que tenha o mesmo email e senha digitados na pg de login
-            const usuario = loginMock.find((user) => {
-                if(user.email === email && user.senha === senha) {
-                    return user
-                }
-            }) 
+            const usuario = await User.findAll({ where: { email: email, senha: senha } })
+            console.log('>>>>>',usuario)
             // se caso o usuario nao for cadastrado 
-            if(usuario === undefined) {
+            if(!usuario || usuario.length === 0) {
                 res.send("Usuario não encontrado")
             } else {
-                const arrayNome = usuario.nome.split(' ')
+                const userLogged = usuario[0].dataValues
                 let iniciais = ''
-                const tamanhoArray = arrayNome.length - 1
-                iniciais += arrayNome[0].substring(0, 1)
-                iniciais += arrayNome[tamanhoArray].substring(0, 1)
+                iniciais += userLogged.nome.substring(0, 1)
+                iniciais += userLogged.sobrenome.substring(0, 1)
                 usuario.iniciais = iniciais
-               res.render('home', { usuario, allProducts, carrinhoProdutos: carrinhoProdutos  });
+                res.render('home', { usuario, allProducts, carrinhoProdutos: carrinhoProdutos  });
 
             }
         }

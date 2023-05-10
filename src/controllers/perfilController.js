@@ -1,5 +1,5 @@
 // eu criei meu objeto Login que tem um atributo e esse atributo é uma função
-const loginMock = require("../database/login.json")
+
 const { validationResult } = require('express-validator');
 const allProducts = require('../database/allProduct.json')
 const carrinhoProdutos = require('../database/carrinhoProdutos.json')
