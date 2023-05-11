@@ -14,7 +14,8 @@ module.exports = (sequelize, DataType) => {
         id_categoria: DataType.INTEGER,
         imagem_1: DataType.STRING(),
         imagem_2: DataType.STRING(),
-        imagem_3: DataType.STRING()
+        imagem_3: DataType.STRING(),
+        codigo_produto: DataType.STRING(45)
 
     }, {
         timestamps: false,

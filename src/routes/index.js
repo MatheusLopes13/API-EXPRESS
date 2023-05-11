@@ -11,20 +11,19 @@ const { body } = require('express-validator')
 const perfilController = require('../controllers/perfilController')
 
 
+
 router.get('/',  homeController.home)
 router.get('/tenis', teniscontroller.tenis)
 router.get('/detals/:id', detalsController.getProduct)
 router.get('/search', homeController.search)
 router.get('/admin', adminController.renderizarAdminPage)
 router.post('/product', 
-    body('nameProduct').notEmpty().withMessage('Marca precisa ser preenchido!'),
-    body('valueProduct').notEmpty().withMessage('Valor precisa ser preenchido!'),
-    body('sizeProduct').notEmpty().withMessage('Tamanho precisa ser preenchido!'),
-    body('descriptionProduct').notEmpty().withMessage('Descrição precisa ser preenchido!'),
-    body('colorProduct').notEmpty().withMessage('Cor precisa ser preenchido!'),
+    body('nome').notEmpty().withMessage('Marca precisa ser preenchido!'),
+    body('valor').notEmpty().withMessage('Valor precisa ser preenchido!'),
+    body('tamanho').notEmpty().withMessage('Tamanho precisa ser preenchido!'),
+    body('descricao').notEmpty().withMessage('Descrição precisa ser preenchido!'),
+    body('cor').notEmpty().withMessage('Cor precisa ser preenchido!'),
     adminController.addProduct)
-router.delete('admin/delet/:product', adminController.deletProduct)
-router.put('/admim/edit/:product', adminController.editProduct)
 router.get('/login', loginController.renderizarTelaLogin) 
 router.get('/pagamento', pagamentoController.pagamentoPage)
 router.get('/roupas', roupasController.roupasPage)
@@ -43,7 +42,8 @@ body('confirmarSenha').isEmpty().withMessage('Confirmar senha precisa ser preenc
 loginController.cadastrarUsuario)
 router.get('/sair', loginController.deslogarUsuario)
 
-module.exports = router
 
+module.exports = router
+ 
 
 

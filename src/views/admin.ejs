@@ -22,31 +22,47 @@ console.log('teste')
         <div class="product"> 
             <div>
                 <label  for="text">Nome</label>  
-                <input type="text" name="nameProduct">
+                <input type="text" name="nome">
             </div>
 
             <div>
                 <label  for="text">Valor</label>  
-                <input type="text" name="valueProduct">
+                <input type="text" name="valor">
             </div>
 
             <div>
                 <label  for="text">Tamanho</label>  
-                <input type="text" name="sizeProduct">
+                <input type="text" name="tamanho">
             </div>
 
             <div>
                 <label  for="text">Descrição</label>  
-                <input type="text" name="descriptionProduct">
+                <input type="text" name="descricao">
             </div>
 
             <div>
                 <label  for="text">Cor </label>  
-                <input type="text" name="colorProduct">
+                <input type="text" name="cor">
             </div>
             <div>
-                <!-- <label  for="text">Imagem </label>  
-                <input type="file" name="pictureProduct"> -->
+                <label  for="text">Imagem </label>  
+                <input type="file" name="imagem_1">
+            </div>
+            <div>
+                <label  for="text">Imagem </label>  
+                <input type="file" name="imagem_2">
+            </div>
+            <div>
+                <label  for="text">Imagem </label>  
+                <input type="file" name="imagem_3">
+            </div>
+            <div>
+                <label  for="text">Categoria</label>  
+                <input type="text" name="id_categoria">
+            </div>
+            <div>
+                <label  for="text">Codigo do produto</label>  
+                <input type="text" name="codigo_produto">
             </div>
 
             <button type="submit">Enviar</button>
@@ -60,24 +76,23 @@ console.log('teste')
     </form>
 
     <div class="container">
-        <% if (typeof products !== 'undefined') { %>
-            <% products.forEach(item => { %>
+        <% if (typeof produto !== 'undefined') { %>
+         
+             <% produto.forEach((item) => { %>
                 <div class="produto">
                     
                     <p> quantidade </p>
-                    <p> <%= item.name %> </p>
-                    <p><%= item.value %> </p>
-                    <p><%= item.size %> </p>
-                    <p><%= item.color %> </p>
-                    <p><%= item.description %> </p>
-                    <p><%=  %> </p>
-                    <a href="/admin/delet/<%= item.id %>">Excluir</a>
-                    <a href="/admin/edit/<%= item.id %>">EDITAR</a>
-
-                    
-    
+                    <p> <%= item.nome %> </p>
+                    <p><%= item.valor %> </p>
+                    <p><%= item.tamanho %> </p>
+                    <p><%= item.cor %> </p>
+                    <p><%= item.descricao %> </p>
+                    <p><%= item.imagem_1 %> </p>
+                    <p><%= item.imagem_2 %> </p>
+                    <p><%= item.imagem_3 %> </p>
+           
                 </div>
-           <%})%>
+           <% }) %> 
     
            <% } %>
         </div>

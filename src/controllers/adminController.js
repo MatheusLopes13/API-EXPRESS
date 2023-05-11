@@ -1,18 +1,21 @@
 
 const { validationResult } = require('express-validator');
 // aqui eu criei meu objeto Pagamento que tem um atributo e esse atributo é uma função
-const productNovidades = require('../database/productNovidades.json');
+/* const productNovidades = require('../database/productNovidades.json'); */
 const carrinhoProdutos = require('../database/carrinhoProdutos.json')
+const {Product} = require('../models')
 
 // importação do nosso dataBase 
 const adminController = {
 // aqui é o meu atributo função 
-    renderizarAdminPage: (req, res) => {
-        res.render('admin', { carrinhoProdutos: carrinhoProdutos })
+    renderizarAdminPage: async (req, res) => {
+        const produto = await Product.findAll()
+
+        res.render('admin', { produto: produto , carrinhoProdutos: carrinhoProdutos })
         
     }, 
 
-    addProduct:(req, res) => {
+    addProduct: async (req, res) => {
         const errors = validationResult(req);
         if (!errors.isEmpty()) {
             console.log(errors)
@@ -20,29 +23,30 @@ const adminController = {
             res.render('admin',{ errors: errors.array(), carrinhoProdutos })
         }
         else {         
-            const add_product = {
-                id: productNovidades.length + 1,
-                name: req.body.nameProduct,
-                value: req.body.valueProduct,
-                color : req.body.colorProduct,
-                size: req.body.sizeProduct,
-                description: req.body.descriptionProduct,
-                picture: []
-            }
-            productNovidades.push(add_product)
+                const product = req.body
+                const getProduct = await Product.findOne({where: {codigo_produto: product.codigo_produto}
+                })
 
-            res.render("admin", { products: productNovidades, carrinhoProdutos}  )  
+                    if(getProduct){
+
+                        res.send('PRODUTO  JÁ CADASTRADO')
+                    }
+
+                    else{
+
+                        await Product.create(product)
+
+                    }
+                    res.render("admin", { Product: Product, carrinhoProdutos: carrinhoProdutos}  )  
+               
+             }
+            
         }
-    },
 
-    deletProduct: (req, res) => {
-        let product = req.params.id
-    },
+      
 
-    editProduct: (req, res) => {
-        let product = req.params.id
+
     }
-}
 
 // aqui eu to exportando o meu objeto
 module.exports = adminController

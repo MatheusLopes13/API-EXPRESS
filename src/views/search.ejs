@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<%- include('includes/head', { linkCss: 'css/home.css' , title: 'Home page' }) %>
+<%- include('includes/head', { linkCss: 'css/home.css' , title: 'search' }) %>
 
 
 <body>
@@ -10,13 +10,13 @@
             
        
             <div class="produto">
-                <img src=" <%= item.imagem[1] %> " alt="produto">
+                <img src=" <%= item.imagem_1 %> " alt="produto">
                 <p>
                     <%= item.nome %>
-                </p>
+                </p> 
                 <p>
                     teste
-                    R$ <%= item.valor %>
+                    R$ <%= item.valor %> 
                 </p>
                 <div>
 

@@ -1,5 +1,6 @@
 
 // const allProducts = require('../database/allProduct.json')
+const { Op } = require('sequelize')
 const carrinhoProdutos = require('../database/carrinhoProdutos.json')
 
 const {Product} = require('../models')
@@ -19,11 +20,15 @@ home: async (req, res) => {
 }, 
 
 
-search: (req, res) => {
+search:async (req, res) => {
     let search = req.query.keywords
     
-    let result = allProducts.filter((item) => {
-      return item.nome.toLowerCase().includes(search)
+    let result = await Product.findAll({
+      where: {
+        nome: {
+          [Op.substring]: search 
+        }
+      }
     })
 
     res.render('search', {product: result })
