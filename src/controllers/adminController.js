@@ -27,7 +27,7 @@ const adminController = {
                 const product = req.body
                 const getProduct = await Product.findOne({where: {codigo_produto: product.codigo_produto}
                 })
-
+                
                     if(getProduct){
 
                         res.send('PRODUTO  JÁ CADASTRADO')
@@ -36,14 +36,16 @@ const adminController = {
                       
                     else{
 
-                    await Product.create(product)
+                        await Product.create(product)
 
-                   const  newProducts = await Product.findAll()
+                        const newProducts = await Product.findAll()
+
+                        res.render("admin", { produto: newProducts ,carrinhoProdutos: carrinhoProdutos } )
 
 
                     }
                     
-                    res.render("admin", { produto: newProducts ,carrinhoProdutos: carrinhoProdutos } )  
+                   
                
              }
             
