@@ -3,21 +3,36 @@
 
 <%- include('includes/head', { linkCss: 'css/detals.css' , title: 'Home page' }) %>
 
+ <% if (typeof usuario !== 'undefined') { %>
+            <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos, usuario}) %>
+        <% } else { %>
+            <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
+        <% } %>
     
 
         <main>
 
             <div class="box-1">
-                <% product.imagem.forEach((item, index)=> { %>
-                    <img id="img-<%= index %>" src="<%= item %>" alt="sd">
-                    <% }) %>
+              
+                <% if (typeof product.imagem_1 !== 'undefined') { %>
+                    <img id="img-0" src="<%= product.imagem_1 %>" alt="sd">
+                <% } %>
+
+                <% if (typeof product.imagem_2 !== 'undefined') { %>
+                    <img id="img-2" src="<%= product.imagem_2 %>" alt="sd">
+                <% } %>
+
+                <% if (typeof product.imagem_3 !== 'undefined') { %>
+                    <img id="img-3" src="<%= product.imagem_3 %>" alt="sd">
+                <% } %>
+                   
             </div>
 
            
             <div class="box-2">
 
 
-                <img id="imagem-produto" src="<%= product.imagem[0] %>">
+                <img id="imagem-produto" src="<%= product.imagem_1 %>">
 
 
             </div>
@@ -40,16 +55,10 @@
                 </ul>
 
                 <div class="tamanhos-produto">
-                    <% product.tamanhos.forEach((item)=> { %>
 
                         <button class="button-quantidade">
-                            <%= item %>
+                            -tamanhos-
                         </button>
-
-                        <% }) %>
-
-                        
-
                 </div>
 
               
@@ -58,9 +67,6 @@
                     <div class="adicionar-item">
                         <button id="botao-mais">+</button>
 
-
-                        
-
                         <p id="quantidade">1</p>
                         <button id="botao-menos" disabled="true">-</button>
 
@@ -68,7 +74,7 @@
 
                     <div  class="button-comprar">
                        <a href="/"> teste</a>
-                        <button onclick="pushCarrinho()" id="button-comprar"> </button>  
+                        <button id="button-comprar"> </button>  
                        
                     </div>
                 </div>
