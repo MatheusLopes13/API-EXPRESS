@@ -9,10 +9,11 @@ const {Product} = require('../models')
 const adminController = {
 // aqui é o meu atributo função 
     renderizarAdminPage: async (req, res) => {
+
         const produto = await Product.findAll()
 
-        res.render('admin', { produto: produto , carrinhoProdutos: carrinhoProdutos })
-        
+            res.render('admin', { produto: produto , carrinhoProdutos: carrinhoProdutos })
+
     }, 
 
     addProduct: async (req, res) => {
@@ -26,20 +27,48 @@ const adminController = {
                 const product = req.body
                 const getProduct = await Product.findOne({where: {codigo_produto: product.codigo_produto}
                 })
-
+                
                     if(getProduct){
 
                         res.send('PRODUTO  JÁ CADASTRADO')
                     }
 
+                      
                     else{
 
                         await Product.create(product)
 
+                        const newProducts = await Product.findAll()
+
+                        res.render("admin", { produto: newProducts ,carrinhoProdutos: carrinhoProdutos } )
+
+
                     }
-                    res.render("admin", { Product: Product, carrinhoProdutos: carrinhoProdutos}  )  
+                    
+                   
                
              }
+            
+        },
+
+        deleteProduct: async (req, res) => {
+            const { id } = req.params
+
+            const getProduct = await Product.findOne({ where: { id: id } })
+
+            if (getProduct !== null){
+                const result = await Product.destroy({ where: { id } })
+
+                const newProducts = await Product.findAll()
+
+                res.render("admin", { produto: newProducts ,carrinhoProdutos: carrinhoProdutos } )
+            }
+
+            else { res.send("Produto não encontrado")
+
+            }
+
+           
             
         }
 

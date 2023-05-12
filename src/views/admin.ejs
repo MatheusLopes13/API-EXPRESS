@@ -90,7 +90,10 @@ console.log('teste')
                     <p><%= item.imagem_1 %> </p>
                     <p><%= item.imagem_2 %> </p>
                     <p><%= item.imagem_3 %> </p>
-           
+                    
+                    <form action="/admin/delete/<%= item.id %>" method="POST">
+                        <button type="submit" >Remover Produto</button>
+                    </form>
                 </div>
            <% }) %> 
     

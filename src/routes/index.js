@@ -41,6 +41,7 @@ body('senha').notEmpty().withMessage('Senha precisa ser preenchido!'),
 body('confirmarSenha').isEmpty().withMessage('Confirmar senha precisa ser preenchido!'),
 loginController.cadastrarUsuario)
 router.get('/sair', loginController.deslogarUsuario)
+router.post('/admin/delete/:id', adminController.deleteProduct)
 
 
 module.exports = router
