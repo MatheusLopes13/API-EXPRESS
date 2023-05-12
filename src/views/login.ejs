@@ -20,7 +20,16 @@ include(caminho do arquivo que eu quero importar o bloco de código)  -->
 
                 </script>
               <% } %>
-          <% } %>
+          <% } else if(typeof sucess !== 'undefined') { %>
+            <% for(let x in sucess) { %>
+                <script>
+                    toastr.options.progressBar = true;
+                    toastr.options.closeButton = true;
+                    toastr.success('<%= sucess[x].msg %>')
+
+                </script>
+                <% } %>
+            <% } %>
         
         <!-- Login -->
         <div class="width-30">

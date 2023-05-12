@@ -21,18 +21,18 @@ const loginController = {
             console.log(data)
             const usuario = await User.findOne({ where: { email: data.email } })
             if (usuario) {
-                res.send('Email já cadastrado')
+                res.render('login', {errors:[{msg: 'Email já em uso.'}]})
             }
 
-            if (data.senha !== data.confirmarsenha ){
-                res.send('Senhas não são iguais')
+            else if (data.senha !== data.confirmarsenha ){
+                res.render('login', {errors: [{ msg: 'Senhas não coincidem.' }]})
             }
 
             data.administrador = 0
             delete data.confirmarsenha
 
             const newUser = await User.create(data);
-            res.send(newUser)
+            res.render('login', {sucess: [{msg: 'Usuario ' + newUser.nome + ' criado com sucesso'}]})
 
            
         }
@@ -54,7 +54,7 @@ const loginController = {
             console.log('>>>>>',usuario)
             // se caso o usuario nao for cadastrado 
             if(usuario === null) {
-                res.send("Usuario não encontrado")
+                res.render('login', { errors: [{ msg:'Usuario não encontrado' }] })
             } else {
                 const userLogged = usuario.dataValues
                 let iniciais = ''
