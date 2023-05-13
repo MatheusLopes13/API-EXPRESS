@@ -12,7 +12,7 @@ const adminController = {
 
         const produto = await Product.findAll()
 
-            res.render('admin', { produto: produto , carrinhoProdutos: carrinhoProdutos })
+        res.render('admin', { produto: produto , carrinhoProdutos: carrinhoProdutos })
 
     }, 
 

@@ -60,8 +60,9 @@ const loginController = {
                 let iniciais = ''
                 iniciais += userLogged.nome.substring(0, 1)
                 iniciais += userLogged.sobrenome.substring(0, 1)
-                usuario.iniciais = iniciais
-                res.render('home', { usuario, allProducts, carrinhoProdutos: carrinhoProdutos  });
+                userLogged.iniciais = iniciais
+                console.log('usuario>>>', usuario.dataValues);
+                res.render('home', { usuario: userLogged, carrinhoProdutos: carrinhoProdutos  });
 
             }
         }

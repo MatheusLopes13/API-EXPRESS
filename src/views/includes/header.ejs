@@ -12,6 +12,11 @@
             <li>
                 <a href="">Skate</a>
             </li>
+            <% if(typeof usuario !== 'undefined' && usuario.administrador === 1) { %>
+                <li>
+                    <a href="/admin">Admin</a>
+                </li>
+            <% } %>
         </ul>
     </div>
 
@@ -42,13 +47,6 @@
         </a>
 
         <% if (typeof usuario !== 'undefined') { %>
-
-            <!-- <div class="iniciais">
-    
-                <p class="margin-0"><%= usuario.iniciais %></p>
-                
-            </div> -->
-
             <div class="dropdown iniciais">
                 <p class="margin-0 dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                     <%= usuario.iniciais %>
