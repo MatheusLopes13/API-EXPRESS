@@ -5,7 +5,11 @@
 
 <body> 
     
- <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
+    <% if (typeof usuario !== 'undefined') { %>
+        <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos, usuario}) %>
+    <% } else { %>
+        <%- include('includes/header' , {carrinhoProduts: carrinhoProdutos}) %>
+    <% } %>
  
  <main>
 
@@ -63,10 +67,13 @@
     </div>
 
     <div class="container-1">
-        <% tenisProduct.forEach(item => { %>
+        <% if (typeof allProducts !== 'undefined') { %>
+            <% allProducts.forEach(item=> { %>
 
             <div class="destaque-2">
-                <img src="<%= item.imagem[0] %>" alt="produto">
+                <% if (item.imagem_1) { %>
+                <img src="<%= item.imagem_1 %>" alt="produto">
+            <% } %>
                 <p>
                     <%= item.nome %>
                 </p>
@@ -83,7 +90,8 @@
             </div>
 
             <%})%>
-            
+            <%}%>
+                    
     </main>
             
             <%- include('includes/footer') %>     
