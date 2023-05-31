@@ -20,10 +20,15 @@ module.exports = (sequelize, DataType) => {
     }, {
         timestamps: false,
         tableName: 'produto'
+    } )
+    Product.associate = (modelsList) => {
+        Product.belongsTo(modelsList.ProductType, {
+          foreignKey: 'id_categoria',
+          as: 'productType'
+        })
     }
 
-
-    )
+    
 
     return Product
 }
